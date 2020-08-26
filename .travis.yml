@@ -10,8 +10,11 @@ before_install:
   - docker pull suranagivinod/openjdk8
 
   script:
-    - ./mvnw clean install
-    - ./mvnw deploy jib:build -P deploy-docker
+    - mvn clean install -DskipTests
+
+
+script: ./build.sh
+
 
 deploy:
   provider: heroku
