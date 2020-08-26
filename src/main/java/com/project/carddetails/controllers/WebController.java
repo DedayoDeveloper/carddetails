@@ -12,4 +12,9 @@ public class WebController {
         return "index";
     }
 
+    @GetMapping("/test")
+    public String indexTwo(){
+        return "HELLO TEST WORLD";
+    }
+
 }
