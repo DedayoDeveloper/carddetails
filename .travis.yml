@@ -2,6 +2,8 @@ env:
   - DOCKER_USERNAME=dedayodeveloper
   - DOCKER_PASSWORD=diweoreoluwa
 
+services:
+  - docker
 
 before_install:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
