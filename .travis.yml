@@ -13,8 +13,14 @@ before_install:
     - ./mvnw clean install
     - ./mvnw deploy jib:build -P deploy-docker
 
+deploy:
+  provider: heroku
+  api_key:
+    secure: b53b5f38-4000-4691-bf06-3b2628e11d13
 
-
+branches:
+  only:
+    - master
 
 
 
