@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{index-layout}">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <title>Coding Test</title>
+    <!-- Template CSS -->
+    <link  th:href="@{~/assets/css/style-starter.css}" rel="stylesheet">
+
+<!--    <style>-->
+<!--        body {-->
+<!--            background-image: url("./assets/images/atmcard.jpg");-->
+<!--            background-size: cover;-->
+<!--        }-->
+<!--    </style>-->
+<!--    &lt;!&ndash; google fonts &ndash;&gt;-->
+<!--    <link th:href="@{//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap}" rel="stylesheet">-->
 </head>
 <body>
-HELLO WOLRD
+
+<br>
+<br>
+<div class="container">
+
+
+
+        <section class="col-md-6 m-auto text-center">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter first 6 digit of bank card">
+            </div>
+        <div class="form-group">
+            <label>Scheme</label>
+        <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Type</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Bank</label>
+            <input type="text" class="form-control">
+        </div>
+        </section>
+
+</div>
 </body>
 </html>
