@@ -3,6 +3,7 @@ package com.project.carddetails.controllers;
 import com.project.carddetails.models.Payloads;
 import com.project.carddetails.response.ApiResponse;
 import com.project.carddetails.response.VerifyCardResponse;
+import com.project.carddetails.services.KafkaProducer;
 import com.project.carddetails.services.VerifyCardService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,9 @@ public class RestApiController {
     @Autowired
     private VerifyCardService verifyCardService;
 
+    @Autowired
+    private KafkaProducer kafkaProducer;
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/card-scheme/verify/{cardnumber}")
@@ -30,6 +34,7 @@ public class RestApiController {
         payloads.setBank(JsonResponse.getBank().getName());
         card.setSuccess(true);
         card.setPayloads(payloads);
+        kafkaProducer.publishToQueue("codingtest", payloads);
         return card;
     }
 

@@ -29,4 +29,14 @@ public class Payloads {
     public void setBank(String bank) {
         this.bank = bank;
     }
+
+
+    @Override
+    public String toString() {
+        return "Payloads{" +
+                "scheme='" + scheme + '\'' +
+                ", type='" + type + '\'' +
+                ", bank='" + bank + '\'' +
+                '}';
+    }
 }
