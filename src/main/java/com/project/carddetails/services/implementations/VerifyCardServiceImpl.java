@@ -20,7 +20,7 @@ public class VerifyCardServiceImpl implements VerifyCardService {
 
 
     @Override
-    public ApiResponse VerifyBankCard(long cardNumber){
+    public ApiResponse VerifyBankCard(String cardNumber){
         String url = "https://lookup.binlist.net/"+cardNumber;
         ApiResponse JsonResponse = template.getForObject(url,ApiResponse.class);
         logger.info("apiResponse {}", JsonResponse);

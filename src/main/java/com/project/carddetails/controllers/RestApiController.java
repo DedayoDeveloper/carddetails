@@ -27,7 +27,7 @@ public class RestApiController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @GetMapping("/card-scheme/verify/{cardnumber}")
-    public VerifyCardResponse verifyCardDetails(@PathVariable Long cardnumber, Payloads payloads, VerifyCardResponse card){
+    public VerifyCardResponse verifyCardDetails(@PathVariable String cardnumber, Payloads payloads, VerifyCardResponse card){
         ApiResponse JsonResponse = verifyCardService.VerifyBankCard(cardnumber);
         payloads.setScheme(JsonResponse.getScheme());
         payloads.setType(JsonResponse.getType());

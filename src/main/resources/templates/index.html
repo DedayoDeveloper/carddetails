@@ -43,16 +43,20 @@
 
         <div class="form-group">
             <label>Scheme</label>
-        <input type="text" class="form-control" readonly>
+        <input type="text" class="form-control" readonly th:value="${apiresponse.scheme}">
         </div>
         <div class="form-group">
             <label>Type</label>
-            <input type="text" class="form-control" readonly>
+            <input type="text" class="form-control" readonly th:value="${apiresponse.type}">
         </div>
         <div class="form-group">
             <label>Bank</label>
-            <input type="text" class="form-control" readonly>
+            <input type="text" class="form-control" readonly th:value="${bankname}">
         </div>
+                <div class="form-group">
+                    <label>Country</label>
+                    <input type="text" class="form-control" readonly th:value="${country}">
+                </div>
 
             </div>
         </section>
